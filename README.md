@@ -18,14 +18,17 @@ Though AutoFlow is not a production level application, it is not far from one. T
 **Note: In order to run this application, [autoflow-back-end-demo] Selection Server must be listening on http://localhost:7001.**
 - Clone this Repo onto your local machine
 - install dependencies
-  
-  ```npm i```
+  ```bash
+  npm i
+  ```
 - Install serve (if not already installed)
-  
-  ```npm install -g serve```
+  ```bash
+  npm install -g serve
+  ```
 - Deploy AutoFlow build locally
-
-  ```serve -s build```
+  ```bash
+  serve -s build
+  ```
 - Open [http://localhost:3000](http://localhost:3000) to view AutoFlow in the browser
 
 
