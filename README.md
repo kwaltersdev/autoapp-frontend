@@ -1,5 +1,5 @@
 # AutoFlow Front End Demo
-AutoFlow is a demo single page web application designed and programmed solely by me (Kyle Walters). It is not meant for production, but to illustrate a basic business solution to a common problem faced by used vehicle dealerships and to exercise and showcase my development skills. The entire app is coded in React 17 using 100% Function Components and Hooks. No ugly Class Components!
+AutoFlow is a demo single page web application designed and programmed solely by me (Kyle Walters). It is not meant for production, but to illustrate a basic business solution to a common problem faced by used vehicle dealerships. The entire app is coded in React 17 using 100% Function Components and Hooks. No ugly Class Components!
 
 The main purpose of this web app is to help Inventory Managers organize and track their vehicles as they move through the reconditioning process, from the time they are purchased, to the time they are on the lot 'for sale'. AutoFlow (theoretically) empowers decision making by allowing managers to identify bottlenecks and analyze statistics based on given stages/people/places. All screens are responsive and just as beautiful on a mobile device.
 
