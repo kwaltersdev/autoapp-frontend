@@ -15,7 +15,7 @@ Though AutoFlow is not a production level application, it is not far from one. T
 -  React Cookie
 
 ## Running The App
-**Note: In order to run this application, [autoflow-back-end-demo](https://github.com/kwaltersdev/autoflow-front-end-demo) Selection Server must be listening on http://localhost:7001.**
+**Note: In order to run this application, [autoflow-back-end-demo](https://github.com/kwaltersdev/autoflow-back-end-demo) Selection Server must be listening on http://localhost:7001.**
 - Clone this Repo onto your local machine
 - install dependencies
   ```bash
