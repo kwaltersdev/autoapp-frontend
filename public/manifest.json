@@ -1,28 +1,7 @@
 {
   "short_name": "",
   "name": "",
-  "icons": [
-    {
-      "src": "AF-Favicon-WB-16.png",
-      "type": "image/png",
-      "sizes": "16x16"
-    },
-    {
-      "src": "AF-Favicon-WB-32.png",
-      "type": "image/png",
-      "sizes": "32x32"
-    },
-    {
-      "src": "AutoFlow192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "AutoFlow512.png",
-      "type": "image/png",
-      "sizes": "512x512"
-    }
-  ],
+  "icons": [],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",

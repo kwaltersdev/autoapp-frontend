@@ -49,7 +49,7 @@ export default function Nav(): React.ReactElement {
         <Toolbar>
           <MainMenu />
           <Typography variant="h6" component="h1" className={classes.title}>
-            <Link className={classes.link} to='/'>AutoFlow</Link>
+            <Link className={classes.link} to='/'>AutoApp</Link>
           </Typography>
           <StockSearchBar />
           <UserMenu />

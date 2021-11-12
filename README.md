@@ -1,9 +1,9 @@
-# AutoFlow Front End Demo
-AutoFlow is a demo single page web application designed and programmed solely by me (Kyle Walters). It is not meant for production, but to illustrate a basic business solution to a common problem faced by used vehicle dealerships. The entire app is coded in React 17 using 100% Function Components and Hooks. No ugly Class Components!
+# AutoApp Front End Demo
+AutoApp is a demo single page web application designed and programmed solely by me (Kyle Walters). It is not meant for production, but to illustrate a basic business solution to a common problem faced by used vehicle dealerships. The entire app is coded in React 17 using 100% Function Components and Hooks. No ugly Class Components!
 
-The main purpose of this web app is to help Inventory Managers organize and track their vehicles as they move through the reconditioning process, from the time they are purchased, to the time they are on the lot 'for sale'. AutoFlow (theoretically) empowers decision making by allowing managers to identify bottlenecks and analyze statistics based on given stages/people/places. All screens are responsive and just as beautiful on a mobile device.
+The main purpose of this web app is to help Inventory Managers organize and track their vehicles as they move through the reconditioning process, from the time they are purchased, to the time they are on the lot 'for sale'. AutoApp (theoretically) empowers decision making by allowing managers to identify bottlenecks and analyze statistics based on given stages/people/places. All screens are responsive and just as beautiful on a mobile device.
 
-Though AutoFlow is not a production level application, it is not far from one. The UI is capable of handling production level data through it's optimizations and pagination of results. This demo application falls short of production level because it does not have an authentication mechanism, or a notion of seperate users. Furthermore, some Demo specific features included in this project would not translate to a production application.
+Though AutoApp is not a production level application, it is not far from one. The UI is capable of handling production level data through it's optimizations and pagination of results. This demo application falls short of production level because it does not have an authentication mechanism, or a notion of seperate users. Furthermore, some Demo specific features included in this project would not translate to a production application.
 
 ## Front End Tech Stack
 -  React 17
@@ -15,7 +15,7 @@ Though AutoFlow is not a production level application, it is not far from one. T
 -  React Cookie
 
 ## Running The App
-**Note: In order to run this application, [autoflow-back-end-demo](https://github.com/kwaltersdev/autoflow-back-end-demo) Selection Server must be listening on http://localhost:7001.**
+**Note: In order to run this application, [autoapp-back-end-demo](https://github.com/kwaltersdev/autoapp-back-end-demo) Selection Server must be listening on http://localhost:7001.**
 - Clone this Repo onto your local machine
 - install dependencies
   ```bash
@@ -25,11 +25,11 @@ Though AutoFlow is not a production level application, it is not far from one. T
   ```bash
   npm install -g serve
   ```
-- Deploy AutoFlow build locally
+- Deploy AutoApp build locally
   ```bash
   serve -s build
   ```
-- Open [http://localhost:3000](http://localhost:3000) to view AutoFlow in the browser
+- Open [http://localhost:3000](http://localhost:3000) to view AutoApp in the browser
 
 
 ## Demo Actions

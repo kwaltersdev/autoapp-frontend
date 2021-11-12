@@ -82,7 +82,7 @@ export default function MainMenu(props: MainMenuProps): React.ReactElement {
         <Link className={classes.link} to='/'>
           <ListItem button>
             <Typography variant="h6" component="h2" className={classes.title}>
-              AutoFlow
+              AutoApp
             </Typography>
           </ListItem>
         </Link>
