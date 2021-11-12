@@ -15,7 +15,7 @@ Though AutoApp is not a production level application, it is not far from one. Th
 -  React Cookie
 
 ## Running The App
-**Note: In order to run this application, [autoapp-back-end-demo](https://github.com/kwaltersdev/autoapp-back-end-demo) Selection Server must be listening on http://localhost:7001.**
+**Note: In order to run this application, [autoapp-backend](https://github.com/kwaltersdev/autoapp-back-end-demo) Selection Server must be listening on http://localhost:7001.**
 - Clone this Repo onto your local machine
 - install dependencies
   ```bash
