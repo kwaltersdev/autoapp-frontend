@@ -9,6 +9,7 @@ import InputAdornment from '@mui/material/InputAdornment';
 import { Theme, alpha } from '@mui/material/styles';
 import { styled } from '@mui/material/styles';
 import makeStyles from '@mui/styles/makeStyles';
+import { Set } from '../../types/misc';
 
 const StyledInputAdornment = styled(InputAdornment)(({ theme }) => ({
   color: theme.titleColor.lightBlue,
@@ -26,18 +27,17 @@ const useStyles = makeStyles((theme: Theme) => ({
     '&:hover': {
       backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
-    marginLeft: theme.spacing(2),
-    [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(3),
-      width: 'auto',
-    },
   },
   inputRoot: {
     color: 'inherit',
   },
 }));
 
-export default function StockSearchBar(): React.ReactElement {
+interface StockSearchBarProps {
+  setOpenMenu: Set<boolean>;
+}
+export default function StockSearchBar(props: StockSearchBarProps): React.ReactElement {
+  const { setOpenMenu } = props;
   const classes = useStyles();
   const history = useHistory();
   const location = useLocation();
@@ -59,6 +59,7 @@ export default function StockSearchBar(): React.ReactElement {
         if (!stockFormatTest.test(searchStk)) {
           setStockError('must be 5 digits');
         } else {
+          setOpenMenu(false);
           history.push(`/vehicle-details/stock/${searchStk}/stage?prev=${previous}`);
           setSearchStk('');
         }

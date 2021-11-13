@@ -10,7 +10,6 @@ import makeStyles from '@mui/styles/makeStyles';
 // THIS PROJECT
 // components
 import MainMenu from './MainMenu';
-import StockSearchBar from './StockSearchBar';
 import UserMenu from './UserMenu';
 
 
@@ -49,9 +48,8 @@ export default function Nav(): React.ReactElement {
         <Toolbar>
           <MainMenu />
           <Typography variant="h6" component="h1" className={classes.title}>
-            <Link className={classes.link} to='/'>AutoApp</Link>
+            <Link className={classes.link} to='/'>Auto Inventory Flow</Link>
           </Typography>
-          <StockSearchBar />
           <UserMenu />
         </Toolbar>
       </AppBar>

@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import makeStyles from '@mui/styles/makeStyles';
 import Hidden from '@mui/material/Hidden';
-import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Drawer from '@mui/material/Drawer';
@@ -17,6 +16,10 @@ import AddIcon from '@mui/icons-material/Add';
 import EqualizerIcon from '@mui/icons-material/Equalizer';
 import LaptopIcon from '@mui/icons-material/Laptop';
 import SettingsIcon from '@mui/icons-material/Settings';
+import CloseIcon from '@mui/icons-material/Close';
+// THIS PROJECT
+// components
+import StockSearchBar from './StockSearchBar';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -49,46 +52,108 @@ export default function MainMenu(props: MainMenuProps): React.ReactElement {
   const location = useLocation();
 
   //OPENING THE MENU
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
   const container = window !== undefined ? () => window().document.body : undefined;
 
-  const toggleDrawer = (open: any) => (event: any) => {
-    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
-      return;
-    };
-
-    setOpenMenu(open);
-  };
-
   // DISPLAYING SELECTION
-  type Selection = '/all-vehicles' | '/add-vehicle' | '/stages' | '/people-places' | '/analytics' | '/demo-actions' | '/demo-settings';
+  type Selection = '/all-vehicles' | '/add-vehicle' | '/stages' | '/people-places' | '/analytics' | '/demo-actions' | '/demo-settings' | '';
   const [selection, setSelection] = useState<Selection>('/all-vehicles');
 
   useEffect(() => {
     const regex = /(\/[\w-]+)/;
     const match = location!.pathname.match(regex);
-    match && setSelection(match[1] as Selection);
+    match ? setSelection(match[1] as Selection) : setSelection('');
   }, [location, setSelection]);
 
   // MENU ITEMS
-  const menuItems = (
+  const menuItemsSmall = (
     <div
       className={classes.menuItems}
       role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
     >
-      <Hidden lgUp>
-        <Link className={classes.link} to='/'>
-          <ListItem button>
-            <Typography variant="h6" component="h2" className={classes.title}>
-              AutoApp
-            </Typography>
-          </ListItem>
-        </Link>
-      </Hidden>
+      <ListItem sx={{ marginTop: 1 }} secondaryAction={
+        <IconButton edge="end" aria-label="close menu" onClick={() => setOpenMenu(false)}>
+          <CloseIcon />
+        </IconButton>
+      }>
+      </ListItem>
+      <ListItem>
+        <StockSearchBar setOpenMenu={setOpenMenu} />
+      </ListItem>
       <Divider />
-      <Link className={classes.link} to='/all-vehicles/active/asc/10/first/0'>
+      <Link className={classes.link} to='/all-vehicles/active/asc/10/first/0' onClick={() => setOpenMenu(false)}>
+        <ListItem
+          button
+        >
+          <ListItemIcon><VisibilityIcon /></ListItemIcon>
+          <ListItemText>All Vehicles</ListItemText>
+        </ListItem>
+      </Link>
+      <Link className={classes.link} to='/add-vehicle' onClick={() => setOpenMenu(false)}>
+        <ListItem
+          button
+        >
+          <ListItemIcon><AddIcon /></ListItemIcon>
+          <ListItemText>Add Vehicle</ListItemText>
+        </ListItem>
+      </Link>
+      <Divider />
+      <Link className={classes.link} to='/stages' onClick={() => setOpenMenu(false)}>
+        <ListItem
+          button
+        >
+          <ListItemIcon><VisibilityIcon /></ListItemIcon>
+          <ListItemText>Stages</ListItemText>
+        </ListItem>
+      </Link>
+      <Link className={classes.link} to='/people-places' onClick={() => setOpenMenu(false)}>
+        <ListItem
+          button
+        >
+          <ListItemIcon><VisibilityIcon /></ListItemIcon>
+          <ListItemText>People/Places</ListItemText>
+        </ListItem>
+      </Link>
+      <Divider />
+      <Link className={classes.link} to='/analytics/overview' onClick={() => setOpenMenu(false)}>
+        <ListItem
+          button
+        >
+          <ListItemIcon><EqualizerIcon /></ListItemIcon>
+          <ListItemText>Analytics</ListItemText>
+        </ListItem>
+      </Link>
+      <Divider />
+      <Link className={classes.link} to='/demo-actions' onClick={() => setOpenMenu(false)}>
+        <ListItem
+          button
+        >
+          <ListItemIcon><LaptopIcon /></ListItemIcon>
+          <ListItemText>Demo Actions</ListItemText>
+        </ListItem>
+      </Link>
+      <Link className={classes.link} to='/demo-settings' onClick={() => setOpenMenu(false)}>
+        <ListItem
+          button
+        >
+          <ListItemIcon><SettingsIcon /></ListItemIcon>
+          <ListItemText>Demo Settings</ListItemText>
+        </ListItem>
+      </Link>
+      <Divider />
+    </div >
+  );
+
+  const menuItemsLarge = (
+    <div
+      className={classes.menuItems}
+      role="presentation"
+    >
+      <ListItem>
+        <StockSearchBar setOpenMenu={setOpenMenu} />
+      </ListItem>
+      <Divider />
+      <Link className={classes.link} to='/all-vehicles/active/asc/10/first/0' >
         <ListItem
           button
           selected={selection === '/all-vehicles'}
@@ -97,7 +162,7 @@ export default function MainMenu(props: MainMenuProps): React.ReactElement {
           <ListItemText>All Vehicles</ListItemText>
         </ListItem>
       </Link>
-      <Link className={classes.link} to='/add-vehicle'>
+      <Link className={classes.link} to='/add-vehicle' >
         <ListItem
           button
           selected={selection === '/add-vehicle'}
@@ -107,7 +172,7 @@ export default function MainMenu(props: MainMenuProps): React.ReactElement {
         </ListItem>
       </Link>
       <Divider />
-      <Link className={classes.link} to='/stages'>
+      <Link className={classes.link} to='/stages' >
         <ListItem
           button
           selected={selection === '/stages'}
@@ -116,7 +181,7 @@ export default function MainMenu(props: MainMenuProps): React.ReactElement {
           <ListItemText>Stages</ListItemText>
         </ListItem>
       </Link>
-      <Link className={classes.link} to='/people-places'>
+      <Link className={classes.link} to='/people-places' >
         <ListItem
           button
           selected={selection === '/people-places'}
@@ -126,7 +191,7 @@ export default function MainMenu(props: MainMenuProps): React.ReactElement {
         </ListItem>
       </Link>
       <Divider />
-      <Link className={classes.link} to='/analytics/overview'>
+      <Link className={classes.link} to='/analytics/overview' >
         <ListItem
           button
           selected={selection === '/analytics'}
@@ -136,7 +201,7 @@ export default function MainMenu(props: MainMenuProps): React.ReactElement {
         </ListItem>
       </Link>
       <Divider />
-      <Link className={classes.link} to='/demo-actions'>
+      <Link className={classes.link} to='/demo-actions' >
         <ListItem
           button
           selected={selection === '/demo-actions'}
@@ -145,7 +210,7 @@ export default function MainMenu(props: MainMenuProps): React.ReactElement {
           <ListItemText>Demo Actions</ListItemText>
         </ListItem>
       </Link>
-      <Link className={classes.link} to='/demo-settings'>
+      <Link className={classes.link} to='/demo-settings' >
         <ListItem
           button
           selected={selection === '/demo-settings'}
@@ -158,27 +223,28 @@ export default function MainMenu(props: MainMenuProps): React.ReactElement {
     </div >
   );
 
+
   return <>
-    <IconButton
+    {!openMenu && <IconButton
       edge="start"
       className={classes.menuButton}
       color="inherit"
       aria-label="menu"
-      onClick={toggleDrawer(true)}
+      onClick={() => setOpenMenu(true)}
       size="large">
       <MenuIcon />
-    </IconButton>
+    </IconButton>}
     <nav>
       <Hidden lgUp implementation='css'>
-        <Drawer container={container} anchor={'left'} open={openMenu} onClose={toggleDrawer(false)}>
-          {menuItems}
+        <Drawer container={container} anchor={'left'} open={openMenu}>
+          {menuItemsSmall}
         </Drawer>
       </Hidden>
       <Hidden lgDown implementation='css'>
         <Drawer variant='permanent' open>
-          {menuItems}
+          {menuItemsLarge}
         </Drawer>
       </Hidden>
     </nav>
   </>;
-};;
+};

@@ -53,7 +53,7 @@ export default function LogIn(): React.ReactElement {
         <ExtraSmallCard className={classes.card}>
           <ContentHeader>
             <FlexCenter>
-              <ContentTitle className={classes.title} variant='h5'>AutoApp</ContentTitle>
+              <ContentTitle className={classes.title} variant='h5'>Auto Inventory Flow</ContentTitle>
             </FlexCenter>
             <Divider />
           </ContentHeader>
