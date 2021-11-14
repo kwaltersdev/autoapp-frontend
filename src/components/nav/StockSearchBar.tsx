@@ -72,7 +72,7 @@ export default function StockSearchBar(props: StockSearchBarProps): React.ReactE
   return (
     < TextField className={classes.search}
       size='small'
-      placeholder="Stk#"
+      placeholder="Stock #"
       error={stockError ? true : false}
       helperText={stockError}
       inputProps={{ 'aria-label': 'search' }

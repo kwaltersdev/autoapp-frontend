@@ -64,7 +64,7 @@ export default function VehicleDetails(): React.ReactElement {
     findVehicleService(searchCriteria, searchValue)
       .then(result => {
         mounted.current && result.status === 'success' && !result.data
-          && setGetVehicleError(`No vehicles match ${searchCriteria}: ${searchValue}`);
+          && setGetVehicleError(`No vehicles match ${searchCriteria === 'stock' ? 'stk#' : 'id'}: ${searchValue}`);
         mounted.current && setGetVehicleStatus(result.status as GetRequestStatus);
         mounted.current && setVehicle(result.data);
       }, e => {

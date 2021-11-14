@@ -55,6 +55,16 @@ export default function MainMenu(props: MainMenuProps): React.ReactElement {
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const container = window !== undefined ? () => window().document.body : undefined;
 
+  const closeDrawerEvent = (event: React.KeyboardEvent | React.MouseEvent) => {
+    if (event.type === 'keydown' &&
+      ((event as React.KeyboardEvent).key === 'Tab' ||
+        (event as React.KeyboardEvent).key === 'Shift')
+    ) {
+      return;
+    }
+    setOpenMenu(false);
+  };
+
   // DISPLAYING SELECTION
   type Selection = '/all-vehicles' | '/add-vehicle' | '/stages' | '/people-places' | '/analytics' | '/demo-actions' | '/demo-settings' | '';
   const [selection, setSelection] = useState<Selection>('/all-vehicles');
@@ -236,7 +246,7 @@ export default function MainMenu(props: MainMenuProps): React.ReactElement {
     </IconButton>}
     <nav>
       <Hidden lgUp implementation='css'>
-        <Drawer container={container} anchor={'left'} open={openMenu}>
+        <Drawer container={container} anchor={'left'} open={openMenu} onClose={closeDrawerEvent}>
           {menuItemsSmall}
         </Drawer>
       </Hidden>

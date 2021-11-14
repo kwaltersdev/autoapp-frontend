@@ -53,7 +53,9 @@ export default function DetailsDoneButton(props: DetailsDoneButtonProps): React.
       : '';
     const exit = () => {
       previous
-        ? history.push(`${previous}`)
+        ? !previous.includes('vehicle-details')
+          ? history.push(`${previous}`)
+          : history.push(`/all-vehicles/active/asc/10/first/0`)
         : history.push(`/all-vehicles/active/asc/10/first/0`);
     };
     if (vehicle && vehicle.currentStage.status === 'complete' && vehicle.status !== 'sold') {
