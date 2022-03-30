@@ -1,7 +1,7 @@
 # Auto Inventory Flow Front End Demo
 Auto Inventory Flow is a demo single page web application designed and programmed solely by me (Kyle Walters). It is not meant for production, but to illustrate a basic business solution to a common problem faced by used vehicle dealerships. The entire app is coded in React 17 using 100% Function Components and Hooks. No ugly Class Components!
 
-The main purpose of this web app is to help Inventory Managers organize and track their vehicles as they move through the reconditioning process, from the time they are purchased, to the time they are on the lot 'for sale'. Auto Inventory Flow empowers decision making by allowing managers to identify bottlenecks and analyze statistics based on given stages/people/places. All screens are responsive and just as beautiful on a mobile device.
+The main purpose of this web app is to help Inventory Managers organize and track their vehicles as they move through the reconditioning process, from the time they are purchased, to the time they are on the lot 'for sale'. Auto Inventory Flow empowers decision making by allowing managers to identify bottlenecks and analyze statistics based on given stages/people/places. All screens are responsive on a mobile device.
 
 Though Auto Inventory Flow is not a production level application, it is not far from one. The UI is capable of handling production level data through it's optimizations and pagination of results. This demo application falls short of production level because it does not have an authentication mechanism, or a notion of seperate users. Furthermore, some Demo specific features included in this project would not translate to a production application.
 
